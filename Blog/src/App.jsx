@@ -1,15 +1,16 @@
-import "./App.css";
-import Footer from "./components/Footer";
-import Nav from "./components/Nav";
+// src/App.jsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import PostDetail from "./pages/PostDetail";
 
-function App() {
+export default function App() {
   return (
-    <>
-      {" "}
-      <Nav />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/post/:id" element={<PostDetail />} />
+        <Route path="*" element={<p>Sayfa bulunamadı.</p>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
