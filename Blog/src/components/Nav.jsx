@@ -1,6 +1,8 @@
 import React from "react";
 import "./Nav.css";
+import { useNavigate } from "react-router-dom";
 export default function Nav() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="nav-bar">
@@ -11,11 +13,10 @@ export default function Nav() {
         />
         <h1>My Blog</h1>
         <div className="nav-buttons">
-          <button>Home</button>
-          <button>Blog</button>
-          <button>Register</button>
-          <button>Login</button>
-          <button>Contact</button>
+          <button onClick={() => navigate("/")}>Home</button>
+          <button onClick={() => navigate("/post/1")}>Blog</button>
+          <button onClick={() => navigate("/register")}>Register</button>
+          <button onClick={() => navigate("/login")}>Login</button>
         </div>
       </div>
     </>
