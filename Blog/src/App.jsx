@@ -2,6 +2,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import PostDetail from "./pages/PostDetail";
+import Login from "./pages/Login";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/post/:id" element={<PostDetail />} />
         <Route path="*" element={<p>Sayfa bulunamadı.</p>} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
